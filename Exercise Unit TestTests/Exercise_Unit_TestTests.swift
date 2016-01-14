@@ -21,6 +21,20 @@ class Exercise_Unit_TestTests: XCTestCase {
         super.tearDown()
     }
     
+    func testLowWeight() {
+        let mc:MVCBMI = MVCBMI()
+        mc.weight = 50
+        mc.height = 1.7
+        XCTAssertEqual(mc.IMC(), 17.30, "Succes, low weight")
+    }
+
+    func testNormalWeight() {
+        let mc:MVCBMI = MVCBMI()
+        mc.weight = 60
+        mc.height = 1.7
+        XCTAssertEqual(mc.IMC(), 20.76, "Succes, normal weight")
+    }
+
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
